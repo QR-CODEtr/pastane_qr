@@ -284,7 +284,7 @@ body { padding-bottom: env(safe-area-inset-bottom); }
 .snow:nth-child(1) { left: 5%; animation-duration: 8s; font-size: 25px; }
 .snow:nth-child(2) { left: 12%; animation-duration: 12s; font-size: 35px; animation-delay: 1s; }
 .snow:nth-child(3) { left: 18%; animation-duration: 10s; font-size: 20px; animation-delay: 3s; }
-.snow:nth-child(4) { left: 25%; animation-duration: 15s; font-size: 40px; filter: blur(1px); } /* Lapa lapa */
+.snow:nth-child(4) { left: 25%; animation-duration: 15s; font-size: 40px; }
 .snow:nth-child(5) { left: 30%; animation-duration: 9s; font-size: 25px; animation-delay: 2s; }
 .snow:nth-child(6) { left: 38%; animation-duration: 11s; font-size: 30px; }
 .snow:nth-child(7) { left: 45%; animation-duration: 14s; font-size: 22px; animation-delay: 4s; }
