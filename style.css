@@ -1,58 +1,71 @@
 :root {
-    /* PAMUK ŞEKER PALETİ */
-    --bg-color: #FFF5FA;      /* Açık pamuk şeker zemin */
-    --card-bg: #FFFFFF;       /* Kartlar beyaz */
-    --text-main: #C44585;     /* Ahududu pembesi (Başlıklar) */
-    --text-light: #E28CB7;    /* Soft gül pembesi (Açıklamalar) */
-    --accent: #FFB6D9;        /* Pastel şeker pembesi (Buton, etiket) */
+    /* YILBAŞI PALETİ */
+    --bg-color: #0F2E23;      /* Koyu Çam Yeşili (Zemin) */
+    --card-bg: #FFFFFF;       /* Kartlar Kar Beyazı */
+    
+    /* Yazılar */
+    --text-main: #B22222;     /* Noel Kırmızısı (Başlıklar) */
+    --text-light: #5A6D63;    /* Soluk Yeşil/Gri (Açıklamalar) */
+    
+    /* Vurgular */
+    --accent: #C41E3A;        /* Parlak Kırmızı (Butonlar, Etiketler) */
+    --gold: #FFD700;          /* Altın Sarısı (Çerçeveler, detaylar) */
 
-    /* Gölge: Pembe tonlu */
-    --shadow: 0 4px 15px rgba(255, 182, 217, 0.4); 
+    /* Gölge: Hafif Altın/Işıltı hissi veren gölge */
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.3); 
 }
 
 body {
     margin: 0; 
     font-family: 'Segoe UI', sans-serif;
     background-color: var(--bg-color); 
+    /* Arka plana kar efekti vermek için basit bir desen (Opsiyonel ama hoş durur) */
+    
+    background-size: 30px 30px; 
+    
     color: var(--text-main);
     padding-bottom: 50px;
 }
 
 /* Header */
 .banner-area { 
-    height: 180px; 
+    height: 190px; 
     position: relative; 
+    border-bottom: 4px solid var(--gold); /* Altına altın şerit */
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
 }
 .banner-img { 
     width: 100%; 
     height: 100%; 
     object-fit: cover; 
-    filter: sepia(0.1) hue-rotate(320deg); 
+    opacity: 0.9;
 }
 
 .logo-box {
     position: absolute; 
-    bottom: -35px; 
+    bottom: -40px; 
     left: 50%; 
     transform: translateX(-50%);
-    width: 85px; 
-    height: 85px; 
+    width: 90px; 
+    height: 90px; 
     background: #fff; 
-    border: 3px solid var(--accent); 
+    border: 3px solid var(--gold); /* Altın Çerçeve */
     border-radius: 50%; 
     display: flex; 
     align-items: center; 
     justify-content: center;
-    box-shadow: var(--shadow);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.4); /* Altın parıltısı */
     z-index: 10;
 }
-.logo-box i { color: var(--text-main); font-size: 35px; } 
+.logo-box i { color: var(--accent); font-size: 35px; } 
 
 .info-container { 
     text-align: center; 
-    padding: 45px 15px 10px 15px; 
-    background: transparent; 
-    margin-bottom: 10px;
+    padding: 50px 15px 10px 15px; 
+    background: #fff; /* Bilgi kutusu beyaz olsun ki okunsun */
+    margin: 10px 15px; /* Kenarlardan boşluk */
+    border-radius: 15px;
+    box-shadow: var(--shadow);
 }
 .info-container h1 { 
     margin: 0; 
@@ -61,21 +74,21 @@ body {
     font-weight: 700;
 }
 .slogan { 
-    color: var(--text-light); 
+    color: #2E8B57; /* Slogan Yeşil Olsun */
     font-size: 0.95rem; 
     margin-top: 5px; 
     font-weight: 600; 
 }
 
 /* Arama */
-.search-container { padding: 0 15px 15px 15px; }
+.search-container { padding: 5px 15px 15px 15px; }
 .search-box {
     background: #fff; 
-    border: 1px solid var(--accent); 
-    border-radius: 12px;
+    border: 2px solid var(--gold); /* Altın Çerçeve */
+    border-radius: 25px;
     display: flex; 
     align-items: center; 
-    padding: 12px;
+    padding: 10px 15px;
     box-shadow: var(--shadow);
 }
 .search-box input {
@@ -87,8 +100,8 @@ body {
     outline: none;
     font-size: 1rem;
 }
-.search-box i { color: var(--text-light); } 
-.search-box input::placeholder { color: #f3dce8; } 
+.search-box i { color: var(--accent); } 
+.search-box input::placeholder { color: #aaa; }
 
 /* Grid (Kategoriler) */
 .page-container { padding: 0 15px; }
@@ -101,12 +114,13 @@ body {
 }
 .cat-card {
     background: var(--card-bg); 
-    border-radius: 12px; 
+    border-radius: 15px; 
     overflow: hidden;
     height: 140px; 
     position: relative; 
     cursor: pointer;
     box-shadow: var(--shadow); 
+    border: 2px solid #fff; /* Kar çerçevesi */
     transition: transform 0.2s;
 }
 .cat-card:active { transform: scale(0.98); }
@@ -116,19 +130,19 @@ body {
     object-fit: cover; 
 }
 
-/* --- BURASI DEĞİŞTİ --- */
 .cat-title {
     position: absolute; 
     bottom: 0; 
     width: 100%;
-    /* Gradyan kalktı, yerine düz yarı saydam Ahududu rengi geldi */
-    background: rgba(196, 69, 133, 0.85); 
+    /* Kırmızı zemin üzerine beyaz yazı - Hediye kurdelesi gibi */
+    background: var(--accent); 
     text-align: center; 
-    padding: 10px 0; /* Padding biraz düzenlendi */
+    padding: 8px 0; 
     color: #fff; 
     font-weight: bold; 
     text-transform: uppercase; 
-    font-size: 0.95rem;
+    font-size: 0.9rem;
+    border-top: 2px solid var(--gold); /* Üstüne altın şerit */
 }
 
 /* Ürün Listesi */
@@ -138,6 +152,10 @@ body {
     gap: 15px; 
     margin-bottom: 20px; 
     margin-top: 10px;
+    background: #fff; /* Navigasyon okunur olsun */
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
 }
 .nav-bar h2 { 
     color: var(--text-main); 
@@ -146,14 +164,13 @@ body {
     font-weight: 700;
 }
 .back-btn { 
-    background: #fff; 
-    border: 1px solid var(--accent); 
-    color: var(--text-main); 
+    background: var(--accent); 
+    border: none; 
+    color: #fff; 
     padding: 8px 15px; 
     border-radius: 20px; 
     cursor: pointer; 
     font-weight: 600;
-    box-shadow: 0 2px 5px rgba(255, 182, 217, 0.2);
 }
 
 .horizontal-menu { 
@@ -165,20 +182,20 @@ body {
 }
 .horizontal-menu::-webkit-scrollbar { display: none; }
 .horizontal-menu button {
-    background: #fff; 
-    border: 1px solid var(--accent); 
-    color: var(--text-light); 
+    background: rgba(255,255,255, 0.1); /* Yarı saydam beyaz */
+    border: 1px solid var(--gold); 
+    color: #fff; /* Koyu zeminde beyaz yazı */
     padding: 8px 18px; 
     border-radius: 25px; 
     white-space: nowrap;
     font-size: 0.9rem;
-    box-shadow: var(--shadow);
 }
 .horizontal-menu button.active { 
-    background: var(--accent); 
-    color: var(--text-main);   
-    border-color: var(--accent);
+    background: var(--gold); /* Aktif buton ALTIN */
+    color: #0F2E23;          /* Yazısı Yeşil */
+    border-color: var(--gold);
     font-weight: bold; 
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
 }
 
 .product-card {
@@ -187,7 +204,7 @@ body {
     overflow: hidden;
     margin-bottom: 20px;
     box-shadow: var(--shadow);
-    border: 1px solid #fff0f5; 
+    border: 1px solid #eee;
 }
 .p-img-area { 
     height: 190px; 
@@ -202,13 +219,14 @@ body {
     position: absolute; 
     bottom: 12px; 
     right: 12px;
-    background: var(--accent); 
-    color: var(--text-main);   
+    background: var(--accent); /* Kırmızı Top */
+    color: #fff;   
     padding: 6px 14px; 
-    border-radius: 20px; 
+    border-radius: 50px; 
     font-weight: bold;
-    box-shadow: 0 4px 10px rgba(196, 69, 133, 0.2);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.3);
     font-size: 1rem;
+    border: 2px solid var(--gold); /* Altın çerçeveli etiket */
 }
 .p-info { padding: 18px; }
 .p-info h3 { 
@@ -223,10 +241,117 @@ body {
     line-height: 1.4;
 }
 
-.loader { text-align: center; color: var(--text-light); margin-top: 20px; }
+.loader { text-align: center; color: #fff; margin-top: 20px; }
 
 /* Mobil Ayarlar */
 .horizontal-menu { -webkit-overflow-scrolling: touch; }
 * { -webkit-tap-highlight-color: transparent; }
 input[type="text"] { font-size: 16px; }
 body { padding-bottom: env(safe-area-inset-bottom); }
+/* =========================================
+   YILBAŞI ÖZEL TASARIM EKLENTİLERİ
+   ========================================= */
+
+/* 1. KAR YAĞIŞI EFEKTİ */
+.snow-container {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none; /* Tıklamayı engellemesin */
+    z-index: 9999; /* En üstte görünsün */
+    overflow: hidden;
+}
+
+.snow {
+    position: absolute;
+    top: -10px;
+    color: #fff;
+    font-size: 20px;
+    opacity: 0.8;
+    animation: fall linear infinite;
+}
+
+/* Karların rastgele düşmesi için ayarlar */
+.snow:nth-child(1) { left: 10%; animation-duration: 10s; font-size: 15px; }
+.snow:nth-child(2) { left: 20%; animation-duration: 15s; font-size: 25px; animation-delay: 2s; }
+.snow:nth-child(3) { left: 30%; animation-duration: 12s; font-size: 20px; animation-delay: 4s; }
+.snow:nth-child(4) { left: 40%; animation-duration: 18s; font-size: 15px; }
+.snow:nth-child(5) { left: 50%; animation-duration: 14s; font-size: 25px; animation-delay: 1s; }
+.snow:nth-child(6) { left: 60%; animation-duration: 11s; font-size: 20px; animation-delay: 3s; }
+.snow:nth-child(7) { left: 70%; animation-duration: 16s; font-size: 15px; }
+.snow:nth-child(8) { left: 80%; animation-duration: 13s; font-size: 22px; animation-delay: 5s; }
+.snow:nth-child(9) { left: 90%; animation-duration: 19s; font-size: 18px; }
+.snow:nth-child(10){ left: 95%; animation-duration: 14s; font-size: 12px; animation-delay: 2s; }
+
+@keyframes fall {
+    0% { transform: translateY(-10px) rotate(0deg); opacity: 0.8; }
+    100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+}
+
+/* 2. NOEL IŞIKLARI (Header Üstü) */
+.banner-area::before {
+    content: '';
+    position: absolute;
+    top: -5px; left: 0; width: 100%; height: 10px;
+    z-index: 5;
+    /* CSS ile basit ışık kablosu ve ampuller */
+    background-image: 
+        radial-gradient(circle, #ff3d3d 4px, transparent 5px), /* Kırmızı Işık */
+        radial-gradient(circle, #ffd700 4px, transparent 5px), /* Altın Işık */
+        radial-gradient(circle, #2ecc71 4px, transparent 5px); /* Yeşil Işık */
+    background-size: 50px 15px;
+    background-position: 0 0, 15px 0, 30px 0;
+    background-repeat: repeat-x;
+    animation: twinkle 1.5s infinite alternate;
+    border-bottom: 2px solid #333; /* Kablo */
+}
+
+@keyframes twinkle {
+    0% { filter: brightness(0.8); }
+    100% { filter: brightness(1.5) drop-shadow(0 0 5px gold); }
+}
+
+/* 3. KATEGORİ KARTLARI - HEDİYE PAKETİ KURDELESİ */
+.cat-card {
+    border: 2px solid #C41E3A !important; /* Kırmızı Çerçeve */
+    overflow: hidden;
+}
+
+/* Kurdele (Sol Üst Köşe) */
+.cat-card::before {
+    content: '🎁'; /* Hediye ikonu */
+    position: absolute;
+    top: 5px; right: 5px;
+    font-size: 20px;
+    z-index: 5;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    animation: shake 3s infinite;
+}
+
+/* Hediye kutusu gibi sallanma efekti */
+@keyframes shake {
+    0%, 100% { transform: rotate(0deg); }
+    90% { transform: rotate(0deg); }
+    92% { transform: rotate(10deg); }
+    94% { transform: rotate(-10deg); }
+    96% { transform: rotate(5deg); }
+    98% { transform: rotate(-5deg); }
+}
+
+/* 4. FİYAT ETİKETİ - YILBAŞI TOPU GÖRÜNÜMÜ */
+.price-badge {
+    border-radius: 50% !important; /* Tam yuvarlak */
+    width: 40px; height: 40px;
+    display: flex; align-items: center; justify-content: center;
+    border: 2px solid gold;
+    background: radial-gradient(circle at 30% 30%, #ff4d4d, #b30000) !important; /* 3D Top efekti */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+    font-size: 0.9rem !important;
+}
+/* Topun ipi */
+.price-badge::before {
+    content: '';
+    position: absolute;
+    top: -10px; left: 50%; transform: translateX(-50%);
+    width: 2px; height: 10px;
+    background: gold;
+}
