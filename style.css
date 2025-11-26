@@ -1,0 +1,232 @@
+:root {
+    /* PAMUK ŞEKER PALETİ */
+    --bg-color: #FFF5FA;      /* Açık pamuk şeker zemin */
+    --card-bg: #FFFFFF;       /* Kartlar beyaz */
+    --text-main: #C44585;     /* Ahududu pembesi (Başlıklar) */
+    --text-light: #E28CB7;    /* Soft gül pembesi (Açıklamalar) */
+    --accent: #FFB6D9;        /* Pastel şeker pembesi (Buton, etiket) */
+
+    /* Gölge: Pembe tonlu */
+    --shadow: 0 4px 15px rgba(255, 182, 217, 0.4); 
+}
+
+body {
+    margin: 0; 
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--bg-color); 
+    color: var(--text-main);
+    padding-bottom: 50px;
+}
+
+/* Header */
+.banner-area { 
+    height: 180px; 
+    position: relative; 
+}
+.banner-img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    filter: sepia(0.1) hue-rotate(320deg); 
+}
+
+.logo-box {
+    position: absolute; 
+    bottom: -35px; 
+    left: 50%; 
+    transform: translateX(-50%);
+    width: 85px; 
+    height: 85px; 
+    background: #fff; 
+    border: 3px solid var(--accent); 
+    border-radius: 50%; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    box-shadow: var(--shadow);
+    z-index: 10;
+}
+.logo-box i { color: var(--text-main); font-size: 35px; } 
+
+.info-container { 
+    text-align: center; 
+    padding: 45px 15px 10px 15px; 
+    background: transparent; 
+    margin-bottom: 10px;
+}
+.info-container h1 { 
+    margin: 0; 
+    font-size: 1.5rem; 
+    color: var(--text-main); 
+    font-weight: 700;
+}
+.slogan { 
+    color: var(--text-light); 
+    font-size: 0.95rem; 
+    margin-top: 5px; 
+    font-weight: 600; 
+}
+
+/* Arama */
+.search-container { padding: 0 15px 15px 15px; }
+.search-box {
+    background: #fff; 
+    border: 1px solid var(--accent); 
+    border-radius: 12px;
+    display: flex; 
+    align-items: center; 
+    padding: 12px;
+    box-shadow: var(--shadow);
+}
+.search-box input {
+    background: transparent; 
+    border: none; 
+    color: var(--text-main); 
+    width: 100%; 
+    margin-left: 10px; 
+    outline: none;
+    font-size: 1rem;
+}
+.search-box i { color: var(--text-light); } 
+.search-box input::placeholder { color: #f3dce8; } 
+
+/* Grid (Kategoriler) */
+.page-container { padding: 0 15px; }
+.hidden { display: none !important; }
+
+.grid-layout { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 15px; 
+}
+.cat-card {
+    background: var(--card-bg); 
+    border-radius: 12px; 
+    overflow: hidden;
+    height: 140px; 
+    position: relative; 
+    cursor: pointer;
+    box-shadow: var(--shadow); 
+    transition: transform 0.2s;
+}
+.cat-card:active { transform: scale(0.98); }
+.cat-card img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+}
+
+/* --- BURASI DEĞİŞTİ --- */
+.cat-title {
+    position: absolute; 
+    bottom: 0; 
+    width: 100%;
+    /* Gradyan kalktı, yerine düz yarı saydam Ahududu rengi geldi */
+    background: rgba(196, 69, 133, 0.85); 
+    text-align: center; 
+    padding: 10px 0; /* Padding biraz düzenlendi */
+    color: #fff; 
+    font-weight: bold; 
+    text-transform: uppercase; 
+    font-size: 0.95rem;
+}
+
+/* Ürün Listesi */
+.nav-bar { 
+    display: flex; 
+    align-items: center; 
+    gap: 15px; 
+    margin-bottom: 20px; 
+    margin-top: 10px;
+}
+.nav-bar h2 { 
+    color: var(--text-main); 
+    font-size: 1.3rem; 
+    margin: 0; 
+    font-weight: 700;
+}
+.back-btn { 
+    background: #fff; 
+    border: 1px solid var(--accent); 
+    color: var(--text-main); 
+    padding: 8px 15px; 
+    border-radius: 20px; 
+    cursor: pointer; 
+    font-weight: 600;
+    box-shadow: 0 2px 5px rgba(255, 182, 217, 0.2);
+}
+
+.horizontal-menu { 
+    display: flex; 
+    overflow-x: auto; 
+    gap: 10px; 
+    margin-bottom: 20px; 
+    padding-bottom: 5px; 
+}
+.horizontal-menu::-webkit-scrollbar { display: none; }
+.horizontal-menu button {
+    background: #fff; 
+    border: 1px solid var(--accent); 
+    color: var(--text-light); 
+    padding: 8px 18px; 
+    border-radius: 25px; 
+    white-space: nowrap;
+    font-size: 0.9rem;
+    box-shadow: var(--shadow);
+}
+.horizontal-menu button.active { 
+    background: var(--accent); 
+    color: var(--text-main);   
+    border-color: var(--accent);
+    font-weight: bold; 
+}
+
+.product-card {
+    background: var(--card-bg); 
+    border-radius: 15px; 
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow);
+    border: 1px solid #fff0f5; 
+}
+.p-img-area { 
+    height: 190px; 
+    position: relative; 
+}
+.p-img-area img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+}
+.price-badge {
+    position: absolute; 
+    bottom: 12px; 
+    right: 12px;
+    background: var(--accent); 
+    color: var(--text-main);   
+    padding: 6px 14px; 
+    border-radius: 20px; 
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(196, 69, 133, 0.2);
+    font-size: 1rem;
+}
+.p-info { padding: 18px; }
+.p-info h3 { 
+    margin: 0 0 6px 0; 
+    font-size: 1.1rem; 
+    color: var(--text-main);
+}
+.p-info p { 
+    margin: 0; 
+    color: var(--text-light); 
+    font-size: 0.9rem; 
+    line-height: 1.4;
+}
+
+.loader { text-align: center; color: var(--text-light); margin-top: 20px; }
+
+/* Mobil Ayarlar */
+.horizontal-menu { -webkit-overflow-scrolling: touch; }
+* { -webkit-tap-highlight-color: transparent; }
+input[type="text"] { font-size: 16px; }
+body { padding-bottom: env(safe-area-inset-bottom); }

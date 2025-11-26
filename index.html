@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haylaz Bistro & Cafe</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header & Banner -->
+    <header>
+        <div class="banner-area">
+            <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=1000&auto=format&fit=crop" class="banner-img" alt="Kapak">
+            <div class="logo-box">
+                <!-- Logo yoksa ikon -->
+                <i class="fa-solid fa-utensils" style="font-size: 40px; color: #fff;"></i>
+            </div>
+        </div>
+        <div class="info-container">
+            <h1>Haylaz Bistro & Cafe</h1>
+            <div class="slogan">BURDA YOKLAMA YOK LEZZET VAR :)</div>
+        </div>
+        
+        <!-- Arama -->
+        <div class="search-container">
+            <div class="search-box">
+                <i class="fa fa-search"></i>
+                <input type="text" id="search-input" placeholder="Menüde ara...">
+            </div>
+        </div>
+    </header>
+
+    <!-- 1. SAYFA: KATEGORİLER -->
+    <div id="categories-page" class="page-container">
+        <div id="category-grid" class="grid-layout">
+            <div class="loader">Menü Yükleniyor...</div>
+        </div>
+    </div>
+
+    <!-- 2. SAYFA: ÜRÜNLER -->
+    <div id="products-page" class="page-container hidden">
+        <div class="nav-bar">
+            <button onclick="goHome()" class="back-btn"><i class="fa fa-chevron-left"></i> Menüye Dön</button>
+            <h2 id="cat-title-display">Kategori</h2>
+        </div>
+
+        <!-- Yatay Kategori Menüsü (Hızlı Geçiş) -->
+        <div class="horizontal-menu" id="sub-menu"></div>
+
+        <div id="product-list"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
